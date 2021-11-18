@@ -1,7 +1,6 @@
-package streams;
+package parse.streams;
 import org.junit.jupiter.api.Test;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class Concepts {
     Stream<Integer> s = Stream.of(1,2,3,4);

@@ -1,0 +1,12 @@
+{
+  "PRIMARY_USERNAME": "my-primary-user",
+  "PRIMARY_PASSWORD": "password",
+  "SECONDARY_USERNAME": "my-secondary-user",
+  "SECONDARY_PASSWORD": "password",
+  "ALIEN_USERNAME": "my-alien-user",
+  "ALIEN_PASSWORD": "password",
+  "DEV_CLUSTER_SERVER": "https://api.my.cluster:6443",
+  "DEV_CLUSTER_TOKEN": "token",
+  "DEV_CLUSTER_NAMESPACE": "a-custom-namespace-if-local",
+  "LAUNCH_KEY": "my-username-if-local"
+}

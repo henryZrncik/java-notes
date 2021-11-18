@@ -1,4 +1,4 @@
-package ioFilesystem;
+package parse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,11 +11,11 @@ public class Jsons {
 
     ObjectMapper objectMapper = new ObjectMapper();
     @Test void getUnknownJsonObjectOrList() throws IOException {
-        BufferedReader bf1 = new BufferedReader(new FileReader("src/test/java/io/dataJsonObject.json"));
+        BufferedReader bf1 = new BufferedReader(new FileReader("src/data/JsonObject.json"));
         JsonNode nodeHoldingSingleObject = objectMapper.readTree(bf1);
     }
 
-    BufferedReader bf1 = new BufferedReader(new FileReader("src/test/java/io/dataJsonObject.json"));
+    BufferedReader bf1 = new BufferedReader(new FileReader("src/data/JsonObject.json"));
     JsonNode nodeHoldingSingleObject = objectMapper.readTree(bf1);
     @Test void parseUnknownJson_GetChildNode(){  nodeHoldingSingleObject.get("badElem"); }// Node
     @Test void parseUnknownJson_IsArray(){  nodeHoldingSingleObject.isArray(); }// Bool
@@ -24,8 +24,8 @@ public class Jsons {
     @Test void parseUnknownJson_GetValue(){  nodeHoldingSingleObject.asText();}// String
 
     @Test void getKnownJson() throws IOException {
-        BufferedReader bufferWith1JsonObj = new BufferedReader( new FileReader("src/test/java/io/dataJsonObject.json"));
-        BufferedReader bufferWithMultipleJsonObj = new BufferedReader( new FileReader("src/test/java/io/dataJsonList.json"));
+        BufferedReader bufferWith1JsonObj = new BufferedReader( new FileReader("src/data/JsonObject.json"));
+        BufferedReader bufferWithMultipleJsonObj = new BufferedReader( new FileReader("src/data/JsonList.json"));
         ObjectMapper objectMapper = new ObjectMapper();
         System.out.println("");
         Employee e1 = objectMapper.readValue( bufferWith1JsonObj, Employee.class);

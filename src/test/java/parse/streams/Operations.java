@@ -1,12 +1,15 @@
-package streams;
+package parse.streams;
 import org.junit.jupiter.api.Test;
+import parse.Employee;
+
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 public class Operations {
     List<Integer> myList = List.of( 20,5,20,1,8,3);
+    List<Employee> mEmployees = List.of( new Employee("a", 2), new Employee("b", 5), new Employee("c",1 ));
     @Test void map_filter() {
         myList.stream()
                 .filter(x -> x < 4 ) // Stream {1,3}
@@ -55,6 +58,13 @@ public class Operations {
                     return true;
                 });
         System.out.println(x.toArray()); // this line just to force lazy evaluation.
+    }
+
+
+    // complicated
+    @Test void getBest(){
+        var x = mEmployees.stream().max((o1, o2) -> o1.getSalary() - o2.getSalary()).get();
+        System.out.println(x.getSalary());
     }
 
 

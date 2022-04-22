@@ -1,4 +1,4 @@
-name: Renovate
+name: Renovate-additional
 on:
   schedule:
     - cron: '*/10 * * * *' # Every hour, between 08:00 and 18:00, Monday through Friday

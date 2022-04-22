@@ -12,6 +12,7 @@ public class Optionals {
         System.out.println(emptyOne.isEmpty());  // True
         System.out.println(optionalInt.isPresent());    // True
         System.out.println(optionalInt.get());  // 120
+
         var totalResult = optionalInt
                 .map(a -> a + 5)
                 .orElseGet(() -> {      // if null

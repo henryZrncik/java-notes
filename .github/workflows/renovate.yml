@@ -1,7 +1,7 @@
 name: Renovate
 on:
   schedule:
-    - cron: '0/10 * * * *' # Every hour, between 08:00 and 18:00, Monday through Friday
+    - cron: '*/10 * * * *' # Every hour, between 08:00 and 18:00, Monday through Friday
 jobs:
   renovate:
     runs-on: ubuntu-latest
